@@ -66,10 +66,10 @@ export default function Login() {
       return;
     }
     toast.success("Successfully Signed In");
-    navigate("/profile");
+    navigate(`/profile?email=${findEmail.email}`);
   };
   return (
-    <section className="flex flex-col gap-4 w-full h-full py-2">
+    <section className="flex flex-col gap-4 w-full h-full p-4 py-2">
       <article className="flex flex-col gap-4">
         <div className="flex flex-col gap-1 mr-16 mb-2">
           <h2 className="text-xl font-bold tracking-tight">

@@ -164,7 +164,7 @@ export default function CreateAccount() {
     navigate("/login");
   };
   return (
-    <section className="flex flex-col gap-4 w-full h-full py-2">
+    <section className="flex flex-col gap-4 w-full h-full p-4 py-2">
       <article className="flex flex-col gap-4 grow">
         <h2 className="text-xl font-bold tracking-tight mb-4">
           Create your

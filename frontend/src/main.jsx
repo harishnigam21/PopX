@@ -8,6 +8,7 @@ import App from "./App.jsx";
 const Welcome = lazy(() => import("./components/Welcome.jsx"));
 const Register = lazy(() => import("./components/CreateAccount.jsx"));
 const Login = lazy(() => import("./components/Login.jsx"));
+const Profile = lazy(() => import("./components/Profile.jsx"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Loading..</div>}>
             <Login />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <Suspense fallback={<div>Loading..</div>}>
+            <Profile />
           </Suspense>
         ),
       },
