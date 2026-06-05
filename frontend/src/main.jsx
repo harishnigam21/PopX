@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App.jsx";
 const Welcome = lazy(() => import("./components/Welcome.jsx"));
 const Register = lazy(() => import("./components/CreateAccount.jsx"));
+const Login = lazy(() => import("./components/Login.jsx"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Loading..</div>}>
             <Register />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <Suspense fallback={<div>Loading..</div>}>
+            <Login />
           </Suspense>
         ),
       },

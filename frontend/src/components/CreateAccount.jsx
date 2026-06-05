@@ -108,7 +108,7 @@ export default function CreateAccount() {
         if (item.value.trim().length == 0) {
           setErrorMess((prev) => ({
             ...prev,
-            Email: "Enter an email or phone number",
+            Email: "Enter an email",
           }));
           return false;
         }
@@ -144,6 +144,22 @@ export default function CreateAccount() {
       setLoadingBar(false);
       return;
     }
+    const users = window.localStorage.getItem("users");
+    if (!users) {
+      window.localStorage.setItem("users", JSON.stringify([]));
+    }
+    const parsedUsers = JSON.parse(users);
+    const findEmail = parsedUsers.find((item) => item.email == email);
+    if (findEmail) {
+      toast.error("Account Already exist, please Login");
+      navigate("/login");
+      return;
+    }
+    const payload = [
+      ...users,
+      { fname, phone, email, password, cname, agencyRes },
+    ];
+    window.localStorage.setItem("users", JSON.stringify(payload));
     toast.success("Successfully Registered");
     navigate("/login");
   };
