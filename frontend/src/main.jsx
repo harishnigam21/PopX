@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 import "./index.css";
 import App from "./App.jsx";
+import BouncingLoading from "./components/repeated/BouncingLoading.jsx";
 const Welcome = lazy(() => import("./components/Welcome.jsx"));
 const Register = lazy(() => import("./components/CreateAccount.jsx"));
 const Login = lazy(() => import("./components/Login.jsx"));
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<div>Loading..</div>}>
+          <Suspense fallback={<BouncingLoading />}>
             <Welcome />
           </Suspense>
         ),
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: (
-          <Suspense fallback={<div>Loading..</div>}>
+          <Suspense fallback={<BouncingLoading />}>
             <Register />
           </Suspense>
         ),
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <Suspense fallback={<div>Loading..</div>}>
+          <Suspense fallback={<BouncingLoading />}>
             <Login />
           </Suspense>
         ),
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: (
-          <Suspense fallback={<div>Loading..</div>}>
+          <Suspense fallback={<BouncingLoading />}>
             <Profile />
           </Suspense>
         ),

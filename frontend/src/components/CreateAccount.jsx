@@ -261,7 +261,7 @@ export default function CreateAccount() {
               nextfield.focus();
             }
           }}
-          type={"password"}
+          type={"text"}
           name={"password"}
           htmlFor={"password"}
           id={"password"}

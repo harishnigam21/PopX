@@ -18,7 +18,10 @@ export default function Welcome() {
         >
           Create Account
         </button>
-        <button className="py-3 font-medium text-xs rounded-md bg-[#cebafb] text-black cursor-pointer">
+        <button
+          className="py-3 font-medium text-xs rounded-md bg-[#cebafb] text-black cursor-pointer"
+          onClick={() => navigate("/login")}
+        >
           Already Registered? Login
         </button>
       </div>

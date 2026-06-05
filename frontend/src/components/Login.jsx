@@ -52,6 +52,7 @@ export default function Login() {
     const users = window.localStorage.getItem("users");
     if (!users) {
       toast.error("Failed to connect with DB");
+      navigate("/register");
       return;
     }
     const parsedUsers = JSON.parse(users);
